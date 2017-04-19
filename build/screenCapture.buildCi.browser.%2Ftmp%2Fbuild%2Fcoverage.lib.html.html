@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Code coverage report for node-npmtest-orchestrator/orchestrator/lib/runTask.js</title>
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-orchestrator/node_modules/orchestrator/lib/runTask.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -194,7 +192,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-orchestrator">npmtest-orchestrator (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-orchestrator/orchestrator/lib/runTask.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-orchestrator/node_modules/orchestrator/lib/runTask.js</span></h1>
     <h2>
         
         Statements: <span class="metric">11.11% <small>(3 / 27)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-orchestrator/orchestrator/lib/</a> &#187; runTask.js</div>
+    <div class="path"><a href="../../../../index.html">All files</a> » <a href="index.html">node-npmtest-orchestrator/node_modules/orchestrator/lib/</a> » runTask.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -355,59 +353,59 @@
 var eos = require('end-of-stream');
 var consume = require('stream-consume');
 &nbsp;
-module.exports = <span class="fstat-no" title="function not covered" >function (task, done) {</span>
-<span class="cstat-no" title="statement not covered" >	var that = this, finish, cb, isDone = false, start, r;</span>
+module.exports = <span class="fstat-no" title="function not covered">function (task, done) {</span>
+<span class="cstat-no" title="statement not covered">	var that = this, finish, cb, isDone = false, start, r;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	finish = <span class="fstat-no" title="function not covered" >function (err, runMethod) {</span></span>
-<span class="cstat-no" title="statement not covered" >		var hrDuration = process.hrtime(start);</span>
+<span class="cstat-no" title="statement not covered">	finish = <span class="fstat-no" title="function not covered">function (err, runMethod) {</span></span>
+<span class="cstat-no" title="statement not covered">		var hrDuration = process.hrtime(start);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		if (isDone &amp;&amp; !err) {</span>
-<span class="cstat-no" title="statement not covered" >			err = new Error('task completion callback called too many times');</span>
+<span class="cstat-no" title="statement not covered">		if (isDone &amp;&amp; !err) {</span>
+<span class="cstat-no" title="statement not covered">			err = new Error('task completion callback called too many times');</span>
 		}
-<span class="cstat-no" title="statement not covered" >		isDone = true;</span>
+<span class="cstat-no" title="statement not covered">		isDone = true;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		var duration = hrDuration[0] + (hrDuration[1] / 1e9); </span>// seconds
+<span class="cstat-no" title="statement not covered">		var duration = hrDuration[0] + (hrDuration[1] / 1e9); </span>// seconds
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		done.call(that, err, {</span>
+<span class="cstat-no" title="statement not covered">		done.call(that, err, {</span>
 			duration: duration, // seconds
 			hrDuration: hrDuration, // [seconds,nanoseconds]
 			runMethod: runMethod
 		});
 	};
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	cb = <span class="fstat-no" title="function not covered" >function (err) {</span></span>
-<span class="cstat-no" title="statement not covered" >		finish(err, 'callback');</span>
+<span class="cstat-no" title="statement not covered">	cb = <span class="fstat-no" title="function not covered">function (err) {</span></span>
+<span class="cstat-no" title="statement not covered">		finish(err, 'callback');</span>
 	};
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	try {</span>
-<span class="cstat-no" title="statement not covered" >		start = process.hrtime();</span>
-<span class="cstat-no" title="statement not covered" >		r = task(cb);</span>
+<span class="cstat-no" title="statement not covered">	try {</span>
+<span class="cstat-no" title="statement not covered">		start = process.hrtime();</span>
+<span class="cstat-no" title="statement not covered">		r = task(cb);</span>
 	} catch (err) {
-<span class="cstat-no" title="statement not covered" >		return finish(err, 'catch');</span>
+<span class="cstat-no" title="statement not covered">		return finish(err, 'catch');</span>
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	if (r &amp;&amp; typeof r.then === 'function') {</span>
+<span class="cstat-no" title="statement not covered">	if (r &amp;&amp; typeof r.then === 'function') {</span>
 		// wait for promise to resolve
 		// FRAGILE: ASSUME: Promises/A+, see http://promises-aplus.github.io/promises-spec/
-<span class="cstat-no" title="statement not covered" >		r.then(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >			finish(null, 'promise');</span>
-		}, <span class="fstat-no" title="function not covered" >function(err) {</span>
-<span class="cstat-no" title="statement not covered" >			finish(err, 'promise');</span>
+<span class="cstat-no" title="statement not covered">		r.then(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">			finish(null, 'promise');</span>
+		}, <span class="fstat-no" title="function not covered">function(err) {</span>
+<span class="cstat-no" title="statement not covered">			finish(err, 'promise');</span>
 		});
 &nbsp;
-	} else <span class="cstat-no" title="statement not covered" >if (r &amp;&amp; typeof r.pipe === 'function') {</span>
+	} else <span class="cstat-no" title="statement not covered">if (r &amp;&amp; typeof r.pipe === 'function') {</span>
 		// wait for stream to end
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		eos(r, { error: true, readable: r.readable, writable: r.writable &amp;&amp; !r.readable }, <span class="fstat-no" title="function not covered" >function(err){</span></span>
-<span class="cstat-no" title="statement not covered" >			finish(err, 'stream');</span>
+<span class="cstat-no" title="statement not covered">		eos(r, { error: true, readable: r.readable, writable: r.writable &amp;&amp; !r.readable }, <span class="fstat-no" title="function not covered">function(err){</span></span>
+<span class="cstat-no" title="statement not covered">			finish(err, 'stream');</span>
 		});
 &nbsp;
 		// Ensure that the stream completes
-<span class="cstat-no" title="statement not covered" >        consume(r);</span>
+<span class="cstat-no" title="statement not covered">        consume(r);</span>
 &nbsp;
-	} else <span class="cstat-no" title="statement not covered" >if (task.length === 0) {</span>
+	} else <span class="cstat-no" title="statement not covered">if (task.length === 0) {</span>
 		// synchronous, function took in args.length parameters, and the callback was extra
-<span class="cstat-no" title="statement not covered" >		finish(null, 'sync');</span>
+<span class="cstat-no" title="statement not covered">		finish(null, 'sync');</span>
 &nbsp;
 	//} else {
 		// FRAGILE: ASSUME: callback
@@ -416,10 +414,11 @@ module.exports = <span class="fstat-no" title="function not covered" >function (
 };
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 17:37:13 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Wed Apr 19 2017 04:02:39 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>

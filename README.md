@@ -1,6 +1,6 @@
 # npmtest-orchestrator
 
-#### test coverage for  [orchestrator (v0.3.8)](https://github.com/robrich/orchestrator)  [![npm package](https://img.shields.io/npm/v/npmtest-orchestrator.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-orchestrator) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-orchestrator.svg)](https://travis-ci.org/npmtest/node-npmtest-orchestrator)
+#### basic test coverage for  [orchestrator (v0.3.8)](https://github.com/robrich/orchestrator)  [![npm package](https://img.shields.io/npm/v/npmtest-orchestrator.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-orchestrator) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-orchestrator.svg)](https://travis-ci.org/npmtest/node-npmtest-orchestrator)
 
 #### A module for sequencing and executing tasks and dependencies in maximum concurrency
 
@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-orchestrator/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-orchestrator/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-orchestrator/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-orchestrator/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-orchestrator/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-orchestrator/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-orchestrator/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-orchestrator/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-orchestrator/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-orchestrator/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-orchestrator/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-orchestrator/build/coverage.html/index.html)
 
@@ -88,7 +88,8 @@
     "scripts": {
         "test": "mocha"
     },
-    "version": "0.3.8"
+    "version": "0.3.8",
+    "bin": {}
 }
 ```
 
